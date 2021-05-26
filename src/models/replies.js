@@ -1,70 +1,35 @@
 
 const mongoose = require('mongoose')
 
-const userSchema = new mongoose.Schema({    
+const replySchema = new mongoose.Schema({    
     content: {
         type: String,
         required: true,
-        minLength: 2,
-        maxLength: 200
+        minLength: 2
     },
     creationDate: {
         type: Date,
         required: true,
     },
-    location: {
+    post: {
         type: String,
         required: true,
-        minLength: 2,
-        maxLength: 60
+        
     },
-    mail: {
-        type: String,
-        match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
-        maxLength: 120,
-        required: true
-    },
-    password: {
+    userId: {
         type: String,
         required: true,
         minLength:1
-    },
-    userName: {
-        type: String,
-        required: true,
-        minLength: 2
-    },
-    userNickname: {
-        type: String,
-        required: true,
-        minLength: 2
-    },
-    userPic: {
-        type: String,
-        required: true,
-        minLength: 2
-    },
-    work: {
-        type: String,
-        required: true,
-        minLength: 2
-    },
-    role:{
-        type: [String],
-        enum: ['admin','user'],
-        minLength: 1,
-        required: true
     }
 })
 
-const model = mongoose.model('usersdev', userSchema)
+const model = mongoose.model('replies', replySchema)
 
 module.exports = model
 
 
 /*{"content":"Excelente post!",
 "creationDate":"14/04/2021",
-"creationTime":"19:00",
 "post":1,
 "replyId":1,
 "userId":1}*/
