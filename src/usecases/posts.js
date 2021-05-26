@@ -16,8 +16,13 @@ function create({ content, coverUrl, duration, tags, title, userId }){
     return Posts.create({ content,coverUrl, creationDate, duration, likes, newKey,tags, title, userId })
 }
 
+function updateById(id,dataToUpdate){
+    return Posts.findByIdAndUpdate(id,dataToUpdate);
+}
+
 module.exports={
     getAll,
     getById,
-    create
+    create,
+    updateById
 }

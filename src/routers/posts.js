@@ -70,4 +70,25 @@ router.get('/:id',async (request,response)=>{
     }    
 })
 
+router.patch('/:id', async (request, response)=>{
+    try{
+        const updatedPost = await posts.updateById(request.params.id, request.body)
+        response.json({ 
+            success: true,
+            message: 'Post updated ',
+            data: {
+                koders: updatedPost
+            }
+        })
+    }catch(error){
+        response.status(400)
+        response.json({ 
+            success: false,
+            message: 'Error at post update',
+            error:  error.message
+            
+        })
+    }
+})
+
 module.exports = router
