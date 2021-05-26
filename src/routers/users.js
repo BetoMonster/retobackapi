@@ -10,7 +10,7 @@ router.post('/', async(request, response)=>{
             success: true,
             message: 'User registered',
             data: {
-                koders: newUser
+                users: newUser
             }
         })
     }catch(error){
@@ -32,7 +32,7 @@ router.get('/', async (request, response)=>{
             success: true,
             message: 'All users',
             data: {
-                koders: allUsers
+                users: allUsers
             }
         })
     }catch(error){
