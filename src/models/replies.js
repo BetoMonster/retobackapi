@@ -31,5 +31,4 @@ module.exports = model
 /*{"content":"Excelente post!",
 "creationDate":"14/04/2021",
 "post":1,
-"replyId":1,
 "userId":1}*/

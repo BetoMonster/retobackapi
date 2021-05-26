@@ -11,7 +11,7 @@ router.get('/',  async (request,response)=>{
             success: true,
             message: 'All replies',
             data: {
-                posts: allReplies
+                replies: allReplies
             }
         })
 
@@ -33,7 +33,7 @@ router.post('/', async (request,response)=>{
             success: true,
             message: 'New reply created :D',
             data: {
-                posts: replyCreated
+                replies: replyCreated
             }
         })
 
@@ -51,12 +51,12 @@ router.post('/', async (request,response)=>{
 router.get('/:idPost',async (request,response)=>{
     try{
         const { idPost } = request.params
-        const postByPostId = await posts.getByPostId(idPost)
+        const postByPostId = await replies.getByPostId(idPost)
         response.json({ 
             success: true,
             message: 'Post Found',
             data: {
-                posts: postByPostId            }
+                replies: postByPostId            }
         })
 
     }catch(error){
