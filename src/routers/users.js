@@ -46,6 +46,28 @@ router.get('/', async (request, response)=>{
     }
 })
 
+router.get('/:id', async (request, response)=>{
+    try{
+        const { id } = request.params
+        const  userFounded = await users.getById(id)
+        response.json({ 
+            success: true,
+            message: 'User Founded',
+            data: {
+                users: userFounded
+            }
+        })
+    }catch(error){
+        response.status(400)
+        response.json({ 
+            success: false,
+            message: 'Could not get user',
+            error:  error.message
+            
+        })
+    }
+})
+
 router.post('/login',async(request, response)=>{
     try{
         const {email, password} = request.body
