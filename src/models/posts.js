@@ -19,7 +19,7 @@ const postSchema = new mongoose.Schema({
     },
     duration: {
         type: String,
-        minLength: 2,
+        minLength: 1,
         maxLenght: 10,
         required: true 
     },
