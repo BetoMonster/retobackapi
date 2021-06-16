@@ -14,5 +14,6 @@ app.use(middlewareLog)
 app.use('/posts',postsRouter)
 app.use('/users',usersRouter)
 app.use('/replies',repliesRouter)
+app.use('/login',usersRouter)
 
 module.exports= app

@@ -1,9 +1,13 @@
 
 const Posts = require('../models/posts')
 
-function getAll () {
+ async function  getAll(){   
     return Posts.find()
+    .populate({path: "userId", model: 'usersdev',  })
+    .exec();    
 }
+
+
 
 function getById(id){
     return Posts.findById(id)

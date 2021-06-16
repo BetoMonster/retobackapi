@@ -1,5 +1,5 @@
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
     content: {
@@ -38,10 +38,14 @@ const postSchema = new mongoose.Schema({
         maxLenght: 150,
         required: true 
     },
-    userId: {
-        type: String,
+    /*user: {
+        type: [Object],     
         required: true 
-    },
+    },*/
+    userId: [{ 
+        type: mongoose.Schema.ObjectId, 
+        ref: 'usersdev' 
+    }],
     newKey: {
         type: String
     }
