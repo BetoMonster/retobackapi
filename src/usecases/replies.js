@@ -7,6 +7,8 @@ function getAll () {
 
 function getByPostId(id){
     return Replies.find({post:id})
+    .populate({path: "userId", model: 'usersdev',  })
+    .exec(); 
 }
 
 function create({ content, post, userId}){
