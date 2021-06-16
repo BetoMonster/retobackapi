@@ -6,7 +6,7 @@ function getAll () {
 }
 
 function getByPostId(id){
-    return Replies.find({post:id})
+    return Replies.find({post:id}).sort({creationDate:-1})
     .populate({path: "userId", model: 'usersdev',  })
     .exec(); 
 }
