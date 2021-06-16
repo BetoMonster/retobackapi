@@ -72,11 +72,16 @@ router.post('/login',async(request, response)=>{
     try{
         const {email, password} = request.body
         const  token = await users.login(email,password)
+        const user = await users.getByEmail(email)
+        const{mail, _id} = user
+        
         response.json({ 
             success: true,
             message: 'Logged in',
             data: {
-                token
+                token,
+                mail,
+                _id
             }
         })
     }catch(error){

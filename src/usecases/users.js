@@ -48,6 +48,14 @@ async function login(mail, password){
 
 }
 
+async function getByEmail(mail){
+    const userFound = await Users.findOne({mail}) 
+    if(!userFound) {
+        throw new Error('Invalid Data')
+    }
+    return userFound
+}
+
 
 
 
@@ -56,6 +64,7 @@ module.exports = {
     getAll,
     getById,
     signUp,
-    login
+    login,
+    getByEmail
 }
 
