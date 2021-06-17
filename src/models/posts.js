@@ -38,7 +38,7 @@ const postSchema = new mongoose.Schema({
         maxLenght: 150,
         required: true 
     },
-    user: {
+    userId: {
         type: String,     
         required: true 
     },

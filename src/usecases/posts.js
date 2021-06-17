@@ -7,6 +7,12 @@ const Posts = require('../models/posts')
     .exec();    
 }
 
+async function  getBy(){   
+    return Posts.find({})
+    .populate({path: "userId", model: 'usersdev',  })
+    .exec();    
+}
+
 
 
 function getById(id){
