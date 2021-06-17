@@ -38,14 +38,10 @@ const postSchema = new mongoose.Schema({
         maxLenght: 150,
         required: true 
     },
-    /*user: {
-        type: [Object],     
+    user: {
+        type: String,     
         required: true 
-    },*/
-    userId: [{ 
-        type: mongoose.Schema.ObjectId, 
-        ref: 'usersdev' 
-    }],
+    },
     newKey: {
         type: String
     }
